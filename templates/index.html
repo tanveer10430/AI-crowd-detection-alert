@@ -1,0 +1,235 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Stadium Monitoring</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/static/style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= STADIUM SETUP POPUP ================= -->
+
+    <div id="setupModal" class="modal">
+
+        <div class="setup-box">
+
+            <h1>Stadium Setup</h1>
+
+            <p>Enter the maximum stadium capacity</p>
+
+            <input
+                type="number"
+                id="capacityInput"
+                placeholder="e.g. 10000"
+                min="1"
+            >
+
+            <button
+                type="button"
+                onclick="startMonitoring()"
+            >
+                Start Monitoring
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ================= DASHBOARD ================= -->
+
+    <div id="dashboard" class="dashboard">
+
+        <h1>AI-Powered Stadium Monitoring</h1>
+
+
+        <!-- ================= ALERT ================= -->
+
+        <div id="alertBox" class="alert safe">
+
+            <h2 id="alertTitle">
+                🟢 NO OVERCROWDING DETECTED
+            </h2>
+
+            <p id="alertMessage">
+                Stadium crowd is within the safe limit.
+            </p>
+
+        </div>
+
+
+
+        <!-- ================= VIDEO UPLOAD ================= -->
+
+        <div class="upload-section">
+
+            <h2>🎥 Upload Monitoring Video</h2>
+
+            <input
+                type="file"
+                id="videoInput"
+                accept="video/*"
+            >
+
+            <button
+                type="button"
+                onclick="uploadVideo()"
+            >
+                Start Video Analysis
+            </button>
+
+        </div>
+
+
+
+        <!-- ================= TWO COLUMNS ================= -->
+
+        <div class="main-content">
+
+
+            <!-- ================= LEFT COLUMN ================= -->
+
+            <div class="camera-section">
+
+                <h2>📹 Video Feed</h2>
+
+                <div class="camera-box">
+
+                    <p>OpenCV + YOLO Footage</p>
+
+                    <p class="camera-placeholder">
+                        Upload a video to start monitoring
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================= RIGHT COLUMN ================= -->
+
+            <div class="data-section">
+
+                <h2>📊 Stadium Data</h2>
+
+
+                <!-- CAPACITY -->
+
+                <div class="stat-card">
+
+                    <span>
+                        Maximum Capacity
+                    </span>
+
+                    <strong id="capacity">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <!-- PEOPLE -->
+
+                <div class="stat-card">
+
+                    <span>
+                        People Detected
+                    </span>
+
+                    <strong id="people">
+                        ---
+                    </strong>
+
+                </div>
+
+
+                <!-- OCCUPANCY -->
+
+                <div class="stat-card">
+
+                    <span>
+                        Occupancy
+                    </span>
+
+                    <strong id="occupancy">
+                        ---
+                    </strong>
+
+                </div>
+
+
+                <!-- REMAINING -->
+
+                <div class="stat-card">
+
+                    <span>
+                        Remaining Capacity
+                    </span>
+
+                    <strong id="remaining">
+                        ---
+                    </strong>
+
+                </div>
+
+
+                <!-- STATUS -->
+
+                <div class="stat-card">
+
+                    <span>
+                        Status
+                    </span>
+
+                    <strong id="status">
+                        ---
+                    </strong>
+
+                </div>
+
+
+
+                <!-- ================= GRAPH ================= -->
+
+                <div class="graph-box">
+
+                    <h2>📈 Crowd Graph</h2>
+
+                    <div class="graph-placeholder">
+
+                        Crowd Count vs Time
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="/static/script.js"></script>
+
+</body>
+
+</html>
+```
